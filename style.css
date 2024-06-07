@@ -17,39 +17,46 @@ body {
 
 }
 
-/******* nav bar ******/
-
-/******* nav bar ******/
 .navBar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 75%;
-    height: 100px;
-    padding: 0 20px;
-}
-
-.profile-picture, .logo, .navBar-links {
-    flex: 1;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 20px 0;
+    background-color: #fff; /* Optional: add background color if needed */
 }
 
-.navBar-links ul {
+.navBar-container {
     display: flex;
-    list-style-type: none;
+    align-items: center;
+    justify-content: center;
+    margin-left: 0;
+    margin-right: 150px;
+    gap: 50px; /* Adjust spacing between elements */
+}
+
+.logo {
+    width: 300px; /* Adjust size as needed */
+}
+
+.profilePic {
+    width: 200px;
+    height: 175px;
+    border-radius: 100%;
+}
+
+.social-icons ul {
+    display: flex;
+    list-style: none;
     padding: 0;
     margin: 0;
 }
 
-.navBar-links li {
-    margin: 0 10px;
-    font-size: 20px;
+.social-icons li {
+    margin: 0 20px; /* Adjust spacing between icons */
 }
 
 .social-icons a {
-    margin: 0 15px;
     font-size: 2em;
     color: #000;
     text-decoration: none;
@@ -57,20 +64,6 @@ body {
 
 .social-icons a:hover {
     color: #768DA8;
-}
-
-.profilePic {
-    width: 160px;
-    height: 140px;
-    border-radius: 75%;
-    margin-top: 15%;
-    margin-left: 30%;
-}
-
-.logo {
-    width: 8%;
-    margin-top: 3%;
-
 }
 
 /******* headers ******/
