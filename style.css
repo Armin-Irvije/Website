@@ -23,7 +23,6 @@ body {
     justify-content: center;
     align-items: center;
     padding: 20px 0;
-    background-color: #fff; /* Optional: add background color if needed */
 }
 
 .navBar-container {
@@ -40,9 +39,9 @@ body {
 }
 
 .profilePic {
-    width: 200px;
+    width: 250px;
     height: 175px;
-    border-radius: 100%;
+    border-radius: 10%;
 }
 
 .social-icons ul {
@@ -79,6 +78,7 @@ body {
     margin-top: 5%;
     margin-left: 10%;
     margin-right: 10%;
+    margin-bottom: 10%;
     background-color: #d7eefe;
 }
 
@@ -90,4 +90,63 @@ body {
 .heroSec-text {
     font-size: 100%;
     color: black;
+}
+/* General link styles */
+.a{
+    text-decoration: none;
+    color: #3498db;
+    transition: color 0.3s ease, background-color 0.3s ease;
+  }
+  
+  /* Hover effect for links */
+  .a:hover {
+    color: #fff;
+    background-color: #3498db;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+  
+  /* Specific styles for resume and email links */
+  .resume-link {
+    font-weight: bold;
+    text-decoration: none;
+
+  }
+  
+  .email-link {
+    font-style: italic;
+    font-weight: bold;
+    text-decoration: none;
+
+  }
+
+
+/* Styles for smartphones (480px and below) */
+@media (max-width: 480px) {
+    .navBar-container {
+        flex-direction: column;
+        margin-right: 0;
+        gap: 10px;
+    }
+
+    .logo {
+        width: 150px;
+    }
+
+    .profilePic {
+        width: 150px;
+        height: 105px;
+    }
+
+    .social-icons li {
+        margin: 0 5px;
+    }
+
+    .headers {
+        font-size: 25px;
+    }
+
+    .title {
+        padding-left: 0.5%;
+    }
 }
