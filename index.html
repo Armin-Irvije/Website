@@ -1,59 +1,95 @@
-<!DOCTYPE html> <!--this is an html preamble
+<!DOCTYPE html>
+<!--this is an html preamble
  also html is NOT case sensitive -->
 <html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" href="mediaQueries.css" />
+    <title>Armin Irvije</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
 
-<head>
-  <link rel="stylesheet" type="text/css" href="style.css">
-  <title> My first webpage! </title>
-  <script src="logic.js"> </script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <body>
+    <section class="navBar">
+      <div class="navBar-container">
+        <img src="images/arminLogo2.png" class="logo" alt="Armin Irvije" />
+        <img src="images/Armin.jpeg" alt="Profile Picture" class="profilePic" />
+        <div class="social-icons">
+          <ul>
+            <li>
+              <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+            </li>
+            <li>
+              <a href="https://github.com/Armin-Irvije" target="_blank"
+                ><i class="fab fa-github"></i
+              ></a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/in/arminirvije/" target="_blank"
+                ><i class="fab fa-linkedin"></i
+              ></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-</head>
+    <!--Armin hero section-->
+    <section class="heroSec">
+      <div class="body-title">
+        <p class="headers">Hello! My name is Armin.<br /></p>
+      </div>
 
-<section class="navBar">
-  <div class="navBar-container">
-    <img src="images/arminLogo2.png" class="logo" alt = "Armin Irvije">
-    <img src="images/Armin.jpeg" alt="Profile Picture" class="profilePic">
-    <div class="social-icons">
-      <ul>
-        <li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
-        <li><a href="https://github.com/Armin-Irvije" target="_blank"><i class="fab fa-github"></i></a></li>
-        <li><a href="https://www.linkedin.com/in/arminirvije/" target="_blank"><i class="fab fa-linkedin"></i></a></li>
-      </ul>
-    </div>
-  </div>
-</section>
+      <div class="body-title heroSec-text">
+        <p>
+          I am a University of California, Davis alumni with a B.S in Computer
+          Science. I am passionate about exploring the intersections of
+          creativity and logic in AI & software development. My strong interest
+          in AI and ML has driven me to seek out opportunities in exciting
+          fields, with the ultimate goal of creating models & software that can
+          improve people's lives. Let's connect!
+        </p>
+        <!--add resume and email and ask to connect-->
+        <p class="links">
+          <a
+            href="images\2024_Armin_Fall_Resume.pdf"
+            target="_blank"
+            class="hero-btn"
+            >View My Resume</a
+          ><br />
+          <a href="mailto:armin.v98@gmail.com" class="hero-btn">
+            armin.v98@gmail.com</a
+          ><br />
+        </p>
+      </div>
+    </section>
 
-
-
-<!--Armin hero section-->
-<section class="heroSec">
-  <div class="title">
-    <p class="headers">
-      Hello! My name is Armin.<br>
-    </p>
-  </div>
-
-  <div class="title heroSec-text">
-    <p>
-      I am a University of California, Davis alumni with a B.S in Computer Science.
-      I am passionate about exploring the intersections of creativity
-      and logic in AI & software development.
-      My strong interest in AI and ML has driven me to seek out opportunities in
-      exciting fields,
-      with the ultimate goal of creating models & software that can improve people's lives.
-      Let's connect!
-    </p>
-    <!--add resume and email and ask to connect-->
-    <p class = "links">
-      <a href="images\2024_Armin_Fall_Resume.pdf" target="_blank" class = "btn" >View My Resume</a><br>
-      <a href="mailto:armin.v98@gmail.com" class = "btn" > armin.v98@gmail.com</a><br>
-     
-    </p>
-    
-  </div>
-</section>
-
-
+    <section id="projects">
+      <p class="sectionText">My Projects!</p>
+      <h1 class="title">Projects</h1>
+      <div class="exper-details-container">
+        <div class="about-containers">
+          <div class="details-container color-container">
+            <div class="article-container">
+              <img src="#" alt="project 1" />
+            </div>
+            <h2 class="expe-sub-title project-title">Project One</h2>
+            <div class="btn-container">
+              <button
+                class="btn btn-color-2 project-btn"
+                href="https://github.com/Armin-Irvije"
+              >
+                Github
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="script.js"></script>
+  </body>
 </html>
