@@ -85,7 +85,7 @@ body {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.title {
+.body-title {
     padding-left: 2%;
     line-height: 2;
 }
@@ -123,7 +123,7 @@ body {
 
   }
 
-  .btn {
+  .hero-btn {
     margin-bottom: 0.5%;
     display: inline-block;
     padding: 10px 20px;
@@ -136,11 +136,88 @@ body {
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.btn:hover {
+.hero-btn:hover {
     background-color: #2980b9;
     transform: scale(1.05);
 }
 
+.btn{
+    font-weight: 600;
+    transition: all 300ms ease;
+    padding: 1rem;
+    width: 8rem;
+    border-radius: 2rem;
+}
+
+.btn-color-2{
+    border: rgb(53,53,53) 0.1rem solid;
+}
+.btn-container{
+    gap: 1rem;
+}
+.about-containers{
+    gap: 2rem;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+}
+.details-container{
+    padding: 1.5rem;
+    flex: 1;
+    background: white;
+    border-radius: 2rem;
+    border: rgb(53,53,53) 0.1rem solid;
+    text-align: center;
+}
+.about-containers,.details-container{
+    display: flex;
+}
+
+.expe-sub-title{
+    color: rgb(85,85,85);
+    font-weight: 600;
+    font-size: 1.75rem;
+    margin-bottom: 2rem;
+}
+.exper-details-container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.article-container{
+    display: flex;
+    text-align: initial;
+    flex-wrap: wrap;
+}
+.sectionText{
+    align-self: center;
+    text-align: center;
+}
+.sectionText p{
+    font-weight: 600;
+}
+.title{
+    font-size: 3rem;
+    text-align: center;
+}
+
+.color-container{
+    border-color: rgba(163,163,163);
+    background: rgb(250,250,250);
+}
+
+.project-img {
+    border-radius:2rem;
+    width: 90%;
+    height: 90%;
+}
+.project-title {
+    margin: 1rem;
+    color: black;
+}
+.project-btn {
+    color: black;
+    border-color: rgba(163,163,163);
+}
 
 
 /* Styles for smartphones (480px and below) */
