@@ -207,7 +207,7 @@ body {
 
 .color-container{
     border-color: rgba(163,163,163);
-    background: rgb(250,250,250);
+    background: linear-gradient(135deg, #d7eefe, #b8dffb);
 }
 
 #projects{
@@ -223,7 +223,7 @@ body {
 }
 .project-title {
     margin: 1rem;
-    color: #2980b9;
+    color: black;
 }
 .project-btn {
     color: black;
