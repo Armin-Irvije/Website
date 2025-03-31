@@ -3,6 +3,7 @@
  also html is NOT case sensitive -->
 <html>
   <head>
+    <link rel="icon" href="favicon\favicon.ico" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="style.css" />
     <link rel="stylesheet" href="mediaQueries.css" />
     <title>Armin Irvije</title>
@@ -18,6 +19,7 @@
       <div class="navBar-container">
         <img src="images/arminLogo2.png" class="logo" alt="Armin Irvije" />
         <img src="images/Armin.jpeg" alt="Profile Picture" class="profilePic" />
+        <!-- Update this section in your navBar -->
         <div class="social-icons">
           <ul>
             <li>
@@ -31,6 +33,11 @@
             <li>
               <a href="https://www.linkedin.com/in/arminirvije/" target="_blank"
                 ><i class="fab fa-linkedin"></i
+              ></a>
+            </li>
+            <li>
+              <a href="mailto:armin.v98@gmail.com" title="Email me"
+                ><i class="fas fa-envelope"></i
               ></a>
             </li>
           </ul>
@@ -60,84 +67,313 @@
             target="_blank"
             class="hero-btn"
             >View My Resume</a
-          ><br />
-          <a href="mailto:armin.v98@gmail.com" class="hero-btn">
-            armin.v98@gmail.com</a
-          ><br />
+          >
         </p>
       </div>
     </section>
+    <!-- Add this code after the heroSec section in your index.html file -->
 
-    <!-- Projects sections! -->
-    <!-- <section id="projects">
-      <h1 class="title">Projects</h1>
-      <div class="exper-details-container">
-        <div class="about-containers">
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img src="images\arduino.jpg" alt="project 1" width="200" height="auto"/>
-            </div>
-            <h2 class="expe-sub-title project-title">Arduino Project</h2>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn" 
-                onclick="location.href = 'https://docs.google.com/presentation/d/1p2bMumXqH68lDNsQ346WdH3X7FEn-EIiaDx56fQIhXw/edit?usp=sharing'"
-              >
-                Google slides
-              </button>
+    <!-- Tabs section -->
+    <section class="tabs-section">
+      <div class="tabs-container">
+        <div class="tabs-header">
+          <button class="tab-btn active" data-tab="experience">
+            Experience
+          </button>
+          <button class="tab-btn" data-tab="skills">Technical Skills</button>
+          <button class="tab-btn" data-tab="projects">Projects</button>
+        </div>
+
+        <div class="tab-content">
+          <!-- Experience Tab Content -->
+          <div class="tab-pane active" id="experience">
+            <div class="experience-timeline">
+              <div class="experience-item">
+                <div class="experience-date">July 2024 – Present</div>
+                <div class="experience-role">
+                  Machine Learning Research Assistant
+                </div>
+                <div class="experience-company">
+                  SDSU Research Foundation, San Diego, CA
+                </div>
+                <div class="experience-description">
+                  <ul>
+                    <li>
+                      Developed an ML model for identifying DNA bases and their
+                      modifications using a Siamese neural network
+                    </li>
+                    <li>
+                      Conducted extensive data preprocessing, parameter tuning,
+                      and optimization to achieve .92 MCC
+                    </li>
+                    <li>
+                      Leveraged Nvidia GPU clusters and CUDA-powered Pytorch
+                      platform to accelerate training
+                    </li>
+                    <li>
+                      Designed a CI/CD pipeline to automate data preprocessing,
+                      unit testing, model training, evaluation, and deployment
+                    </li>
+                    <li>Tools used: Pytorch, Numpy, Pandas, GitLab, Mlflow</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="experience-item">
+                <div class="experience-date">June 2023 – August 2023</div>
+                <div class="experience-role">
+                  Computer Science Intern (remote)
+                </div>
+                <div class="experience-company">
+                  Sports Impact Technologies, Dublin, Ireland
+                </div>
+                <div class="experience-description">
+                  <p>
+                    Startup that develops a wearable sensor to monitor head
+                    impacts
+                  </p>
+                  <ul>
+                    <li>
+                      Developed a website from inception to completion, through
+                      self-taught HTML and CSS, articulating the company's
+                      mission, showcasing product features, and enabling
+                      customer engagement through email input forms
+                    </li>
+                    <li>
+                      Utilized Figma for UI/UX design and wireframing,
+                      translating design into a functional web application
+                    </li>
+                    <li>
+                      Led remote presentations on website development processes,
+                      sharing methodologies, technical challenges, and solutions
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="experience-item">
+                <div class="experience-date">January 2022 – June 2022</div>
+                <div class="experience-role">Student Council Treasurer</div>
+                <div class="experience-company">
+                  International Peoples College, Helsingor, Denmark
+                </div>
+                <div class="experience-description">
+                  <p>
+                    Folk school where classes are taught from a global
+                    perspective
+                  </p>
+                  <ul>
+                    <li>
+                      Implemented a Java program to monitor the student council
+                      budget, ensuring accurate recording of deposits and
+                      withdrawals, resulting in efficient financial management
+                    </li>
+                    <li>
+                      Acted as a representative of the student body, presenting
+                      financial reports and student needs to the school board
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img src="images\mindtheage.png" alt="project 2" width="200" height="auto" />
-            </div>
-            <h2 class="expe-sub-title project-title">Healthcare Project</h2>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn" 
-                onclick="location.href = 'https://github.com/BigDataForSanDiego/Team-133'"
-              >
-                GitHub
-              </button>
+
+          <!-- Technical Skills Tab Content -->
+          <div class="tab-pane" id="skills">
+            <div class="skills-container">
+              <div class="skills-category">
+                <h3>Programming Languages</h3>
+                <div class="skills-list">
+                  <span class="skill-badge">Python</span>
+                  <span class="skill-badge">Java</span>
+                  <span class="skill-badge">C++</span>
+                  <span class="skill-badge">JavaScript</span>
+                  <span class="skill-badge">HTML</span>
+                  <span class="skill-badge">CSS</span>
+                  <span class="skill-badge">SQL</span>
+                </div>
+              </div>
+
+              <div class="skills-category">
+                <h3>Frameworks & Libraries</h3>
+                <div class="skills-list">
+                  <span class="skill-badge">PyTorch</span>
+                  <span class="skill-badge">NumPy</span>
+                  <span class="skill-badge">Pandas</span>
+                  <span class="skill-badge">Scikit-learn</span>
+                  <span class="skill-badge">React Native</span>
+                  <span class="skill-badge">Flask</span>
+                  <span class="skill-badge">Streamlit</span>
+                  <span class="skill-badge">Expo</span>
+                  <span class="skill-badge">Electron</span>
+                </div>
+              </div>
+
+              <div class="skills-category">
+                <h3>Tools & Technologies</h3>
+                <div class="skills-list">
+                  <span class="skill-badge">Git</span>
+                  <span class="skill-badge">GitLab</span>
+                  <span class="skill-badge">MLflow</span>
+                  <span class="skill-badge">CUDA</span>
+                  <span class="skill-badge">Figma</span>
+                  <span class="skill-badge">CI/CD</span>
+                </div>
+              </div>
+
+              <div class="skills-category">
+                <h3>Coursework</h3>
+                <div class="skills-list">
+                  <span class="skill-badge">Machine Learning</span>
+                  <span class="skill-badge">Deep Learning</span>
+                  <span class="skill-badge">Object-Oriented Programming</span>
+                  <span class="skill-badge">Data Structures</span>
+                  <span class="skill-badge">Algorithms</span>
+                </div>
+              </div>
             </div>
           </div>
+
+          <!-- Projects Tab Content -->
+          <div class="tab-pane" id="projects">
+            <div class="projects-grid">
+              <div class="project-card">
+                <img
+                  src="images\mindtheage.png"
+                  alt="MindtheAge"
+                  class="project-img"
+                />
+                <h3 class="project-title">MindtheAge</h3>
+                <p class="project-description">
+                  A mental health recommendation app that provides tailored
+                  resources based on user profiles.
+                </p>
+                <ul class="project-bullets">
+                  <li>
+                    Implemented a logistical regression model to classify mental
+                    health text inputs
+                  </li>
+                  <li>
+                    Designed a user interface with login and navigation features
+                  </li>
+                  <li>Tools: Python, Scikit-learn, Streamlit</li>
+                </ul>
+                <div class="project-links">
+                  <a href="https://github.com/BigDataForSanDiego/repo2024/tree/main/Team-133-main" class="project-btn" target="_blank">GitHub</a>
+                  <a href="https://docs.google.com/presentation/d/1VJYpVfOt4fhhKUXdvZtDSl44OjZGXNYvtsnyoS0DhY8/edit?usp=sharing" class="project-btn" target="_blank">Slides</a>
+                </div>
+              </div>
+
+              <div class="project-card">
+                <img
+                  src="images\adat.jpeg"
+                  alt="Habit Tracker App"
+                  class="project-img"
+                />
+                <h3 class="project-title">Habit Tracker App</h3>
+                <p class="project-description">
+                  A React Native mobile app for tracking both positive habits
+                  and breaking negative habits.
+                </p>
+                <ul class="project-bullets">
+                  <li>
+                    Implemented dual tracking systems with unique progress
+                    metrics
+                  </li>
+                  <li>Consistency counters for positive habits</li>
+                  <li>
+                    Time-since-relapse tracking with milestone achievements
+                  </li>
+                  <li>Tools: React Native, Expo, JavaScript</li>
+                </ul>
+                <div class="project-links">
+                  <a href="https://github.com/Armin-Irvije/Habit-Tracker" class="project-btn" target="_blank">GitHub</a>
+                  <!-- <a href="#" class="project-btn" target="_blank">Demo</a> -->
+                </div>
+              </div>
+
+              <div class="project-card">
+                <img
+                  src="images\batchImage.png"
+                  alt="Batch Image Editor"
+                  class="project-img"
+                />
+                <h3 class="project-title">Batch Image Editor</h3>
+                <p class="project-description">
+                  A cross-platform desktop application for image processing
+                  tasks.
+                </p>
+                <ul class="project-bullets">
+                  <li>
+                    Features: background removal, batch renaming, background
+                    color customization
+                  </li>
+                  <li>Integrated Python-based image processing algorithms</li>
+                  <li>Tools: Electron, Python, HTML, CSS, JavaScript</li>
+                </ul>
+                <div class="project-links">
+                  <a href="https://github.com/Armin-Irvije/Batch_Image_Editor" class="project-btn" target="_blank">GitHub</a>
+                  <!-- <a href="#" class="project-btn" target="_blank">Demo</a> -->
+                </div>
+              </div>
+
+              <div class="project-card">
+                <img
+                  src="images\pointspredictor.png"
+                  alt="NBA Points Predictor"
+                  class="project-img"
+                />
+                <h3 class="project-title">NBA Points Predictor</h3>
+                <p class="project-description">
+                  A web application that predicts NBA players' future points per
+                  game using regression modeling.
+                </p>
+                <ul class="project-bullets">
+                  <li>
+                    Leveraged statistical analysis of historical performance
+                    data
+                  </li>
+                  <li>
+                    Informs training, team strategies, and player evaluations
+                  </li>
+                  <li>Tools: Python, Flask, HTML, Pandas, Scikit-learn</li>
+                </ul>
+                <div class="project-links">
+                  <a href="https://devpost.com/software/playerprops" class="project-btn" target="_blank">DevPost</a>
+                  <!-- <a href="#" class="project-btn" target="_blank">Demo</a> -->
+                </div>
+              </div>
+
+              <div class="project-card">
+                <!-- <img
+                  src="images/project-placeholder.jpg"
+                  alt="Simple Shell"
+                  class="project-img"
+                /> -->
+                <h3 class="project-title">Simple Shell</h3>
+                <p class="project-description">
+                  A C-based custom shell program implementing essential
+                  command-line functionalities.
+                </p>
+                <ul class="project-bullets">
+                  <li>
+                    Features: tokenization, parsing, command execution, output
+                    redirection, piping
+                  </li>
+                  <li>Enhanced debugging and testing strategies</li>
+                  <li>Comprehensive test cases for robust error handling</li>
+                </ul>
+                <div class="project-links">
+                  <a href="simple-shell-report.html" class="project-btn" target="_blank">Report</a>
+                  <!-- <a href="#" class="project-btn" target="_blank">Demo</a> -->
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <div class="exper-details-container">
-        <div class="about-containers">
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img src="images\adat.jpeg" alt="project 3" width="200" height="auto"/>
-            </div>
-            <h2 class="expe-sub-title project-title">Habit Tracker App</h2>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn" 
-                onclick="location.href = 'https://github.com/Armin-Irvije/Habit-Tracker'"
-              >
-                GitHub
-              </button>
-            </div>
-          </div>
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img src="images\pointspredictor.png" alt="project 1" width="200" height="auto" />
-            </div>
-            <h2 class="expe-sub-title project-title">NBA Player Points Predictor</h2>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn" 
-                onclick="location.href = 'https://devpost.com/software/playerprops'"
-              >
-                Devpost
-              </button>
-            </div>
-          </div>
-          </div>
-        </div>
-      </div>
-    </section> -->
+    </section>
+
     <script src="script.js"></script>
   </body>
 </html>

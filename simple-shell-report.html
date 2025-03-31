@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SSHELL: Simple Shell - Project Report</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        @font-face {
+            font-family: "Outfit";
+            src: url("fonts/Outfit-VariableFont_wght.ttf") format("truetype");
+        }
+
+        * {
+            font-family: "Outfit", sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: white;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 30px 20px;
+        }
+
+        .report-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .report-title {
+            font-size: 2.5rem;
+            color: #222;
+            margin-bottom: 10px;
+        }
+
+        .back-link {
+            margin-top: 30px;
+            display: block;
+            text-align: center;
+        }
+
+        .back-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #222;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 500;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .back-btn:hover {
+            background-color: #3498db;
+            transform: scale(1.05);
+        }
+
+        h1, h2 {
+            color: #222;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin: 2rem 0 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #eee;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        .section {
+            margin-bottom: 2.5rem;
+        }
+
+        code {
+            font-family: monospace;
+            background-color: #f5f5f5;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="report-header">
+            <h1 class="report-title">SSHELL: Simple Shell</h1>
+            <p>Project Report</p>
+        </div>
+
+        <div class="section">
+            <h2>Summary</h2>
+            <p>
+                SShell is a shell program in C that runs basic command line executions and 
+                handling. The program's functionality involves reading user commands 
+                followed by tokenizing and parsing through the <code>tokenize()</code> function.
+                The individual tokens are processed by the <code>tokenHandler</code> state machine, which 
+                adds tokens based on the current state. The program will start in the 
+                <code>CMD_STATE</code> and transitions to flag or args states as needed.
+            </p>
+            <p>
+                After the initial tokenization, the control moves to <code>command.c</code>, where an instance of the 
+                command struct is created. The program checks for flags, 
+                arguments, redirection, or piping. Flags are tallied, and arguments are stored.
+                Once the command struct is populated, the program iterates through a linked 
+                list, invoking <code>assert()</code> that leads to a <code>fork()</code>. In the child process, 
+                checks for redirection, piping, or appending are performed, followed by the 
+                execution of built-in functions and <code>execvp()</code>. Child process finishes 
+                and exit back to parent process.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>Design</h2>
+            <p>
+                The program has a modular design, with the main functionality distributed 
+                between <code>sshell.c</code>, handling user input, and <code>command.c</code>, containing functions 
+                related to command execution. <code>sshell.c</code> handles user input, tokenizes input, 
+                manages pipes and redirection. This modular approach enhances readability and 
+                supports scalability making it easier with future extensions.
+            </p>
+            <p>
+                <code>command.c</code> defines the structure <code>Command</code> and <code>CommandNode</code> to represent commands and 
+                linked list. We also implement command-related functions such as <code>execute()</code>, 
+                <code>buildCommand()</code>, and <code>createCommand()</code>. Functions are organized based on their 
+                responsibilities. The programs design demonstrates thought of organization of 
+                code with the use of structures, linked lists and state machines which all 
+                contributes to a well structed codebase.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>Tokenization</h2>
+            <p>
+                The <code>tokenize()</code> function divides the input command into tokens using whitespace 
+                as a delimiter. The state machine in <code>tokenHandler</code> processes these tokens, 
+                constructing the command structure. The <code>CMD_STATE</code> creates a new command and 
+                tranisitions to <code>ARG_STATE</code>. Inside the arg state we determine the type of token 
+                (flag, redirection, append, or argument).
+            </p>
+            <p>
+                If we encounter <code>></code>, <code>>></code>, and <code>|</code> we 
+                change to <code>REDIR_STATE</code>, <code>APP_STATE</code>, <code>PIPE_STATE</code> respectively. A state 
+                machine was chosen to organize specific actions within each state. Its 
+                adaptability to diverse inputs is what made it very useful for the program.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>Command Structure</h2>
+            <p>
+                A <code>Command</code> struct stores command name, flags, arguments, and indications of 
+                redirection or piping. Arrays were used for handling multiple flags and 
+                arguments. The decision to use a struct stems from the need to instantiate 
+                an object with all relevant variables. These structs are stored in a linked 
+                list (<code>CommandNode</code>), enabling the handling of an arbitrary number of pipelines. 
+            </p>
+            <p>
+                Linked list were used for the benefits of dynamic memory management and its 
+                ability to handle a variable number of commands without the need use a fixed 
+                size array. The <code>assert()</code> function is responsible for forking processes into 
+                parent and child. Pattern matching identifies built-in the commands otherwise 
+                <code>execvp()</code> is utilized. Commands access a <code>Command</code> struct node to 
+                retrieve arguments.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>Built-in Commands</h2>
+            <p>
+                The <code>cd</code> function changes the directory by checking for the necessary arguments
+                and using <code>chdir()</code>. For <code>pwd</code>, the C function <code>getcwd</code> retrieves the working 
+                directory, which is then printed to <code>stdout</code>. <code>sls</code> prints information on the 
+                directory and its files using <code>opendir()</code>, <code>readdir()</code>, and <code>stat</code> for file 
+                details.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>Output Redirection</h2>
+            <p>
+                The process for output redirection and appending allow the user to redirect the
+                standard out put to a file or append it. This is achieved through <code>REDIR_STATE</code>
+                and <code>APP_STATE</code> which checks if the token and determines if we need to open an 
+                existing file or create a new one. <code>fdRedir</code> is the file descriptor that is 
+                connected to the opening of the file. This variable is used to redirect the 
+                standard output to the specfiied file.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>Piping</h2>
+            <p>
+                Logic for piping is separated into distinct functions, enhancing code 
+                readability. <code>pipeHandler()</code> is a the function responsible for 
+                managing the piping logic. The function switches between states 
+                (<code>PIPE_BEGIN</code>, <code>PIPE</code>, <code>PIPE_END</code>) that determine the begining middle and end 
+                of the piping process.
+            </p>
+            <p>
+                <code>PIPE_BEGIN</code> connects the standard output of the current
+                command to the write end of the new pipe. This allows the command's output to 
+                be fed into the pipe. <code>PIPE</code> connects standard output to the write end of the new 
+                pipe, which facilitates the flow of data between commands in the pipe. In each 
+                of the cases we use <code>dup2</code> to duplicate file descriptors connecting input 
+                and out to the appropriate part of the pipe.
+            </p>
+            <p>
+                <code>fileDesc</code> is the two-d array used to store file descriptors connected to the pipes. 
+                The array keeps track of read and write ends of the pipes. The piping process enables output of 
+                one process to serve as the input of another improving functionality of the shell.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>Testing & Debugging Strategy</h2>
+            <p>
+                A <code>printVerbose</code> variable controls print statements throughout the code, aiding
+                in tracking the command execution process during testing. These statements 
+                proved crucial for debugging, providing a clear look into program flow. In the 
+                <code>tester.sh</code> file, additional <code>echo</code> statements were incorporated to display 
+                the expected <code>stdout</code> of the tester, facilitating debugging efforts.
+            </p>
+            <p>
+                We also took time to create more test cases that checked error management and edges case that
+                were not test in the initial tester file. The error management was conducted by
+                our <code>checkParseError</code>. This function checks parsing errors like missing commands
+                and improper metacharacters and absence of output file when piping. The errors 
+                are reported to <code>stderr</code>.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>Conclusion</h2>
+            <p>
+                The SShell program is a well designed simple version of a bash shell
+                that effectively handles basic command line executions and various features 
+                such as tokenization, command struct representation, built-in commands, output 
+                redirection, and piping. The modular design, with distinct responsibilities 
+                assigned to different parts of the code, contributes to readability, 
+                maintainability, and scalability.
+            </p>
+            <p>
+                The tokenization process efficiently processes user input and constructs the command structure. 
+                The use of a state machine facilitates adaptability to diverse inputs. The command structure 
+                provides a flexible way to handle an arbitrary number of pipelines. The separation of 
+                logic into <code>main.c</code> and <code>command.c</code> enhances code organization.
+            </p>
+            <p>
+                The testing and debugging strategy, including the use of a <code>printVerbose</code> variable and 
+                additional <code>echo</code> statements in the test script, illustrates a thoughtful 
+                approach to identifying and addressing issues. The creation of expanded 
+                test cases, including those for error management and edge cases,
+                ensured the robustness of the program.
+            </p>
+            <p>
+                The SSHELL program showcases an efficient approach to building a shell in C, providing a solid
+                foundation for potential further development and extension.
+            </p>
+        </div>
+
+        <div class="back-link">
+            <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+        </div>
+    </div>
+</body>
+</html>
