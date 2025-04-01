@@ -214,7 +214,7 @@ body {
 }
 
 .project-img {
-  border-radius: 2rem;
+  border-radius: 0.25rem;
   width: 90%;
   height: 90%;
 }
@@ -440,7 +440,7 @@ body {
   }
   
   .project-card {
-    background-color: white;
+    background-color: #222;
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -459,13 +459,14 @@ body {
   
   .project-title {
     padding: 15px 15px 5px;
+    color: white;
     font-size: 18px;
     font-weight: 600;
   }
   
   .project-description {
     padding: 0 15px 10px;
-    color: #666;
+    color: white;
     font-size: 14px;
     line-height: 1.5;
   }
@@ -473,7 +474,7 @@ body {
   .project-bullets {
     padding: 0 15px 15px 35px;
     margin: 0;
-    color: #666;
+    color: white;
     font-size: 13px;
     line-height: 1.4;
   }
