@@ -64,38 +64,59 @@ body {
 
 /******* headers ******/
 .headers {
-  color: black;
+  color: #1e293b;
   text-align: left;
-  font-size: 35px;
-  font-weight: 500;
+  font-size: 42px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
 }
+
 
 /******* hero section ******/
 .heroSec {
-  margin-top: 5%;
+  margin-top: 3%;
   margin-left: 10%;
   margin-right: 10%;
-  padding-right: 2%;
-  background-color: #d7eefe;
-  background: linear-gradient(135deg, #d7eefe, #b8dffb);
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  background: linear-gradient(135deg, #e0f2fe, #93c5fd);
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
 }
-
+.heroSec::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.05;
+  z-index: 0;
+}
 .body-title {
-  padding-left: 2%;
-  line-height: 2;
+  position: relative;
+  z-index: 1;
+  padding-left: 0;
+  line-height: 1.6;
 }
 
 .heroSec-text {
-  font-size: 100%;
-  color: black;
+  font-size: 18px;
+  color: #334155;
+  max-width: 90%;
+  margin-bottom: 30px;
 }
 /* General link styles */
 .a {
   text-decoration: none;
   color: #3498db;
   transition: color 0.3s ease, background-color 0.3s ease;
+}
+/* Enchance Resume Button */
+.links {
+  margin-top: 30px;
 }
 
 /* Hover effect for links */
@@ -119,24 +140,65 @@ body {
 }
 
 .hero-btn {
-  margin-top: 0.5%;
-  margin-bottom: 0.5%;
   display: inline-block;
-  padding: 10px 20px;
-  font-size: 1em;
+  padding: 12px 28px;
+  font-size: 16px;
+  font-weight: 600;
   color: white;
-  background-color: #222;
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
   border: none;
-  border-radius: 10px;
+  border-radius: 30px;
   text-decoration: none;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 59, 119, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+.hero-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: 0.5s;
 }
 
 .hero-btn:hover {
-  background-color: #2980b9;
-  transform: scale(1.05);
+  background: linear-gradient(135deg, #1d4ed8, #0d1b35);
+  transform: translateY(-3px);
+  box-shadow: 0 7px 14px rgba(0, 59, 119, 0.2);
 }
 
+.hero-btn:hover::before {
+  left: 100%;
+}
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .heroSec {
+    padding: 30px 20px;
+  }
+  
+  .headers {
+    font-size: 32px;
+  }
+  
+  .heroSec-text {
+    font-size: 16px;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroSec {
+    padding: 25px 15px;
+  }
+  
+  .headers {
+    font-size: 28px;
+  }
+}
 .btn {
   font-weight: 600;
   transition: all 300ms ease;
