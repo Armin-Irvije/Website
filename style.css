@@ -72,7 +72,6 @@ body {
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
 }
 
-
 /******* hero section ******/
 .heroSec {
   margin-top: 3%;
@@ -86,7 +85,7 @@ body {
   overflow: hidden;
 }
 .heroSec::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -155,13 +154,18 @@ body {
   overflow: hidden;
 }
 .hero-btn::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
   transition: 0.5s;
 }
 
@@ -179,11 +183,11 @@ body {
   .heroSec {
     padding: 30px 20px;
   }
-  
+
   .headers {
     font-size: 32px;
   }
-  
+
   .heroSec-text {
     font-size: 16px;
     max-width: 100%;
@@ -194,7 +198,7 @@ body {
   .heroSec {
     padding: 25px 15px;
   }
-  
+
   .headers {
     font-size: 28px;
   }
@@ -319,267 +323,368 @@ body {
   }
 }
 
-
 /* Add these styles to your style.css file */
 
 /* Tabs Section Styles */
 .tabs-section {
-    margin-top: 5%;
-    margin-left: 10%;
-    margin-right: 10%;
-    margin-bottom: 5%;
+  margin-top: 4%;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 5%;
+}
+
+.tabs-container {
+  background-color: #f8fafc;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  position: relative;
+}
+.tabs-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.03;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.tabs-header {
+  display: flex;
+  background: linear-gradient(135deg, #3b82f6, #1e40af);
+  border-radius: 16px 16px 0 0;
+  padding: 5px;
+}
+
+.tab-btn {
+  flex: 1;
+  background: transparent;
+  border: none;
+  padding: 16px 0;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 17px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  margin: 0 3px;
+  border-radius: 12px 12px 0 0;
+}
+
+.tab-btn:hover {
+  color: white;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.tab-btn.active {
+  color: #1e293b;
+  background-color: white;
+  font-weight: 600;
+}
+
+.tab-content {
+  padding: 35px;
+  background: linear-gradient(135deg, #d7eefe, #b8dffb);
+  position: relative;
+  z-index: 1;
+  border-radius: 0 0 16px 16px;
+}
+
+.tab-pane {
+  display: none;
+}
+
+.tab-pane.active {
+  display: block;
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
   }
-  
-  .tabs-container {
-    background-color: #f2f2f2;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  .tabs-header {
-    display: flex;
-    background-color: #222;
-    border-radius: 10px 10px 0 0;
+}
+
+/* Experience Tab Styles */
+.experience-timeline {
+  position: relative;
+}
+
+.experience-timeline::before {
+  content: "";
+  position: absolute;
+  left: 20px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, #3b82f6, #93c5fd);
+}
+
+.experience-item {
+  position: relative;
+  padding-left: 60px;
+  margin-bottom: 40px;
+  padding-bottom: 20px;
+}
+
+.experience-item::before {
+  content: "";
+  position: absolute;
+  left: 11px;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border: 3px solid #3498db;
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.2);
+  z-index: 2;
+}
+
+.experience-date {
+  font-size: 14px;
+  color: #64748b;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.experience-role {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #1e293b;
+}
+
+.experience-company {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 15px;
+  color: #3b82f6;
+}
+
+.experience-description {
+  line-height: 1.7;
+  color: #475569;
+}
+.experience-description p {
+  margin-bottom: 12px;
+}
+
+.experience-description ul {
+  margin-top: 12px;
+  margin-left: 20px;
+}
+
+.experience-description li {
+  margin-bottom: 8px;
+  position: relative;
+}
+
+.experience-description li::before {
+  content: "•";
+  color: #3b82f6;
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+/* Skills Tab Styles */
+.skills-container {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+
+.skills-category h3 {
+  font-size: 20px;
+  margin-bottom: 18px;
+  color: #1e293b;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #e0f2fe;
+  position: relative;
+}
+
+.skills-category h3::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 60px;
+  height: 2px;
+  background-color: #3b82f6;
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.skill-badge {
+  background: linear-gradient(135deg, #e0f2fe, #bfdbfe);
+  padding: 10px 18px;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #1e40af;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.skill-badge:hover {
+  background: linear-gradient(135deg, #bfdbfe, #93c5fd);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(59, 130, 246, 0.2);
+}
+
+/* Projects Tab Styles */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.project-card {
+  background: linear-gradient(145deg, #1e293b, #0f172a);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.project-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 3px solid #3b82f6;
+}
+
+.project-title {
+  padding: 20px 20px 10px;
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.project-description {
+  padding: 0 20px 15px;
+  color: #e2e8f0;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.project-bullets {
+  padding: 0 20px 20px 40px;
+  margin: 0;
+  color: #cbd5e1;
+  font-size: 14px;
+  line-height: 1.5;
+  flex-grow: 1;
+}
+
+.project-bullets li {
+  margin-bottom: 8px;
+}
+
+.project-links {
+  display: flex;
+  padding: 0 20px 20px;
+  gap: 12px;
+}
+
+.project-btn {
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #3b82f6, #1e40af);
+  border: none;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 500;
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.project-btn:hover {
+  background: linear-gradient(135deg, #60a5fa, #3b82f6);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(59, 130, 246, 0.3);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .tabs-section {
+    margin-left: 5%;
+    margin-right: 5%;
   }
-  
-  .tab-btn {
-    flex: 1;
-    background: none;
-    border: none;
-    padding: 20px 0;
-    color: white;
-    font-size: 18px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-align: center;
-  }
-  
-  .tab-btn:hover {
-    background-color: #333;
-  }
-  
-  .tab-btn.active {
-    background-color: #222;
-    border-bottom: 2px solid #3498db;
-  }
-  
+
   .tab-content {
-    padding: 30px;
-    background-color: white;
+    padding: 25px 20px;
   }
-  
-  .tab-pane {
-    display: none;
-  }
-  
-  .tab-pane.active {
-    display: block;
-    animation: fadeIn 0.5s ease;
-  }
-  
-  @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-  }
-  
-  /* Experience Tab Styles */
-  .experience-timeline {
-    position: relative;
-  }
-  
-  .experience-timeline::before {
-    content: '';
-    position: absolute;
-    left: 20px;
-    top: 0;
-    bottom: 0;
-    width: 2px;
-    background-color: #e0e0e0;
-  }
-  
-  .experience-item {
-    position: relative;
-    padding-left: 60px;
-    margin-bottom: 40px;
-    padding-bottom: 20px;
-  }
-  
-  .experience-item::before {
-    content: '';
-    position: absolute;
-    left: 11px;
-    top: 0;
-    width: 20px;
-    height: 20px;
-    background-color: white;
-    border: 3px solid #3498db;
-    border-radius: 50%;
-  }
-  
-  .experience-date {
-    font-size: 14px;
-    color: #777;
-    margin-bottom: 10px;
-  }
-  
-  .experience-role {
-    font-size: 24px;
-    font-weight: 600;
-    margin-bottom: 5px;
-  }
-  
-  .experience-company {
-    font-size: 18px;
-    font-weight: 500;
-    margin-bottom: 15px;
-  }
-  
-  .experience-description {
-    line-height: 1.6;
-    color: #444;
-  }
-  
-  .experience-description ul {
-    margin-top: 10px;
-    margin-left: 20px;
-  }
-  
-  .experience-description li {
-    margin-bottom: 5px;
-  }
-  
-  .show-more-btn {
-    background: none;
-    border: none;
-    color: #3498db;
-    font-weight: 500;
-    padding: 0;
-    margin-top: 10px;
-    cursor: pointer;
-    text-decoration: underline;
-  }
-  
-  /* Skills Tab Styles */
-  .skills-container {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-  }
-  
-  .skills-category h3 {
-    font-size: 20px;
-    margin-bottom: 15px;
-    color: #333;
-  }
-  
-  .skills-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-  }
-  
-  .skill-badge {
-    background: linear-gradient(135deg, #d7eefe, #b8dffb);
-    padding: 8px 16px;
-    border-radius: 20px;
-    font-size: 14px;
-    font-weight: 500;
-    color: #333;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  .skill-badge:hover {
-    background-color: #2980b9;
-    transform: scale(1.05);
-  }
-  
-  /* Projects Tab Styles */
+
   .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 30px;
+    grid-template-columns: 1fr;
   }
-  
-  .project-card {
-    background-color: #222;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+
+  .tabs-header {
+    flex-direction: column;
+    padding: 0;
   }
-  
-  .project-card:hover {
-    transform: translateY(-5px);
-  }
-  
-  .project-img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-  }
-  
-  .project-title {
-    padding: 15px 15px 5px;
-    color: white;
-    font-size: 18px;
-    font-weight: 600;
-  }
-  
-  .project-description {
-    padding: 0 15px 10px;
-    color: white;
-    font-size: 14px;
-    line-height: 1.5;
-  }
-  
-  .project-bullets {
-    padding: 0 15px 15px 35px;
+
+  .tab-btn {
+    border-radius: 0;
     margin: 0;
-    color: white;
-    font-size: 13px;
-    line-height: 1.4;
+    padding: 14px 0;
   }
-  
-  .project-bullets li {
-    margin-bottom: 4px;
+
+  .tab-btn:first-child {
+    border-radius: 16px 16px 0 0;
   }
-  
-  .project-links {
-    display: flex;
-    padding: 0 15px 15px;
-    gap: 10px;
+
+  .experience-item {
+    padding-left: 40px;
   }
-  
-  .project-btn {
-    padding: 8px 15px;
-    background-color: #f5f5f5;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 14px;
-    font-weight: 500;
-    color: #333;
-    text-decoration: none;
-    transition: all 0.3s ease;
+}
+
+@media (max-width: 480px) {
+  .tabs-section {
+    margin-left: 3%;
+    margin-right: 3%;
   }
-  
-  .project-btn:hover {
-    background-color: #3498db;
-    color: white;
-    border-color: #3498db;
+
+  .tab-content {
+    padding: 20px 15px;
   }
-  
-  /* Responsive Styles */
-  @media (max-width: 768px) {
-    .projects-grid {
-      grid-template-columns: 1fr;
-    }
-    
-    .tabs-header {
-      flex-direction: column;
-    }
-    
-    .experience-item {
-      padding-left: 40px;
-    }
+
+  .experience-role {
+    font-size: 20px;
   }
+
+  .experience-company {
+    font-size: 16px;
+  }
+
+  .skills-category h3 {
+    font-size: 18px;
+  }
+}
