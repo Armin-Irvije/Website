@@ -688,3 +688,88 @@ body {
     font-size: 18px;
   }
 }
+/* Modal styles to add to your style.css file */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.9);
+  backdrop-filter: blur(5px);
+}
+
+.modal-content {
+  position: relative;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  height: 90%;
+  max-width: 1200px;
+}
+
+#modalVideo,
+#modalImage {
+  max-width: 100%;
+  max-height: 90vh;
+  display: none;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+}
+
+.close-modal {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+  z-index: 1001;
+}
+
+.close-modal:hover,
+.close-modal:focus {
+  color: #3b82f6;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Make project images/videos have a pointer cursor to indicate clickability */
+.project-img {
+  cursor: pointer;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.project-img:hover {
+  transform: scale(1.03);
+  filter: brightness(1.1);
+}
+
+/* Add a subtle overlay with a play icon for videos */
+.project-card video.project-img {
+  position: relative;
+}
+
+.project-card video.project-img::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  background-color: rgba(59, 130, 246, 0.8);
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.project-card video.project-img:hover::after {
+  opacity: 1;
+}

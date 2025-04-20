@@ -118,6 +118,25 @@
                   </ul>
                 </div>
               </div>
+              <div class="experience-item">
+                <div class="experience-date">August 2023 – September 2023</div>
+                <div class="experience-role">Program Assistant</div>
+                <div class="experience-company">AvenueE, Davis, CA</div>
+                <div class="experience-description">
+                  <ul>
+                    <li>
+                      Guided 10 computer science students to 100% completion
+                      rate on microcontroller project, with 2 of my groups
+                      wining prizes for their projects
+                    </li>
+                    <li>
+                      Executed a comprehensive orientation program that
+                      increased student engagement by 25%, with post-program
+                      surveys showing 90% satisfaction rates
+                    </li>
+                  </ul>
+                </div>
+              </div>
 
               <div class="experience-item">
                 <div class="experience-date">June 2023 – August 2023</div>
@@ -238,6 +257,42 @@
           <div class="tab-pane" id="projects">
             <div class="projects-grid">
               <div class="project-card">
+                <!-- <img
+                  src="images\batchImage.png"
+                  alt="Batch Image Editor"
+                  class="project-img"
+                /> -->
+                <video
+                  class="project-img"
+                  autoplay
+                  muted
+                  loop
+                  onclick="openModal('images/BatchImage_Video_V2.mp4', 'video')"
+                >
+                  <source
+                    src="images/BatchImage_Video_V2.mp4"
+                    type="video/mp4"
+                  />
+                </video>
+                <h3 class="project-title">Batch Image Editor</h3>
+                <p class="project-description">
+                  A cross-platform desktop application for image processing
+                  tasks.
+                </p>
+                <ul class="project-bullets">
+                  <li>
+                    Features: background removal, batch renaming, background
+                    color customization
+                  </li>
+                  <li>Integrated Python-based image processing algorithms</li>
+                  <li>Tools: Electron, Python, HTML, CSS, JavaScript</li>
+                </ul>
+                <div class="project-links">
+                  <!-- <a href="https://github.com/Armin-Irvije/Batch_Image_Editor" class="project-btn" target="_blank">GitHub</a> -->
+                  <!-- <a href="#" class="project-btn" target="_blank">Demo</a> -->
+                </div>
+              </div>
+              <div class="project-card">
                 <img
                   src="images\mindtheage.png"
                   alt="MindtheAge"
@@ -308,36 +363,8 @@
               </div>
 
               <div class="project-card">
-                <!-- <img
-                  src="images\batchImage.png"
-                  alt="Batch Image Editor"
-                  class="project-img"
-                /> -->
-                <video class = "project-img" autoplay muted>
-                  <source src="images/BatchImage_Video_V2.mp4" type="video/mp4">
-                </video>
-                <h3 class="project-title">Batch Image Editor</h3>
-                <p class="project-description">
-                  A cross-platform desktop application for image processing
-                  tasks.
-                </p>
-                <ul class="project-bullets">
-                  <li>
-                    Features: background removal, batch renaming, background
-                    color customization
-                  </li>
-                  <li>Integrated Python-based image processing algorithms</li>
-                  <li>Tools: Electron, Python, HTML, CSS, JavaScript</li>
-                </ul>
-                <div class="project-links">
-                  <!-- <a href="https://github.com/Armin-Irvije/Batch_Image_Editor" class="project-btn" target="_blank">GitHub</a> -->
-                  <!-- <a href="#" class="project-btn" target="_blank">Demo</a> -->
-                </div>
-              </div>
-
-              <div class="project-card">
                 <img
-                  src="images\pointspredictor.png"
+                  src="images/NBA.png"
                   alt="NBA Points Predictor"
                   class="project-img"
                 />
@@ -402,6 +429,17 @@
       </div>
     </section>
 
-    <script src="script.js"></script>
+    <div id="videoModal" class="modal">
+      <span class="close-modal">&times;</span>
+      <div class="modal-content">
+        <video id="modalVideo" controls>
+          <source src="" type="video/mp4" />
+        </video>
+        <img id="modalImage" src="" alt="Project Image" />
+      </div>
+    </div>
+    <script src="javascripts/script.js"></script>
+    <script src = "javascripts/modal.js"></script>
+    <script src = ></script>
   </body>
 </html>
