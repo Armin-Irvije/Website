@@ -194,7 +194,7 @@ body {
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .heroSec {
     padding: 25px 15px;
   }
@@ -294,7 +294,7 @@ body {
 }
 
 /* Styles for smartphones (480px and below) */
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .navBar-container {
     flex-direction: column;
     margin-right: 0;
@@ -632,6 +632,17 @@ body {
 }
 
 /* Responsive Styles */
+@media (min-width: 1470px) {
+  .projects-grid {
+    display: grid;
+    /* Change the grid-template-columns to ensure max 2 cards side by side */
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 500px), 1fr));
+    gap: 30px;
+    /* Add max-width to ensure cards don't stretch too wide */
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+}
 @media (max-width: 768px) {
   .tabs-section {
     margin-left: 5%;

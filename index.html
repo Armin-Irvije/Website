@@ -57,7 +57,7 @@
           Science. I am passionate about exploring the intersections of
           creativity and logic in AI & software development. My strong interest
           in AI and ML has driven me to seek out opportunities in exciting
-          fields, with the ultimate goal of creating models & software that can
+          fields, with the ultimate goal of creating software that can
           improve people's lives. Let's connect!
         </p>
         <!--add resume and email and ask to connect-->
@@ -287,10 +287,6 @@
                   <li>Integrated Python-based image processing algorithms</li>
                   <li>Tools: Electron, Python, HTML, CSS, JavaScript</li>
                 </ul>
-                <div class="project-links">
-                  <!-- <a href="https://github.com/Armin-Irvije/Batch_Image_Editor" class="project-btn" target="_blank">GitHub</a> -->
-                  <!-- <a href="#" class="project-btn" target="_blank">Demo</a> -->
-                </div>
               </div>
               <div class="project-card">
                 <img
@@ -330,11 +326,15 @@
               </div>
 
               <div class="project-card">
-                <img
-                  src="images\adat.jpeg"
-                  alt="Habit Tracker App"
+                <video
                   class="project-img"
-                />
+                  autoplay
+                  muted
+                  loop
+                  onclick="openModal('images/Adat_video.mp4', 'video')"
+                >
+                  <source src="images/Adat_video.mp4" type="video/mp4" />
+                </video>
                 <h3 class="project-title">Habit Tracker App</h3>
                 <p class="project-description">
                   A React Native mobile app for tracking both positive habits
@@ -439,7 +439,6 @@
       </div>
     </div>
     <script src="javascripts/script.js"></script>
-    <script src = "javascripts/modal.js"></script>
-    <script src = ></script>
+    <script src="javascripts/modal.js"></script>
   </body>
 </html>
