@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SSHELL: Simple Shell - Project Report</title>
+    <link rel="icon" href="favicon\favicon.ico" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <style>
+      .photo-gallery {
+        padding: 2rem 0;
+      }
+
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+        grid-gap: 1rem;
+      }
+
+      .gallery-item {
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+      }
+
+      .gallery-item img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      /* .caption {
+        padding: 0.5rem;
+        font-size: 0.9rem;
+        color: #666;
+      } */
+
+      /* Modal styles if you choose option 3 */
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.8);
+      }
+
+      .modal-content {
+        background-color: #fefefe;
+        margin: 5% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+        max-width: 1200px;
+        border-radius: 8px;
+      }
+
+      .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <div class="photo-gallery">
+    <h2>Island Week 2024</h2>
+    <p>
+      Photos from our week-long charitable event that raised $1500 for the
+      United Service Organization.
+    </p>
+
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <img src="images/iw_1.jpg" />
+        <!-- <p class="caption">Day 1: Opening ceremony with over 200 attendees</p> -->
+      </div>
+      <div class="gallery-item">
+        <img src="images/iw_2.jpg" />
+      </div>
+      <div class="gallery-item">
+        <img src="images/iw_3.jpg" />
+      </div>
+      <!-- Add more gallery items as needed -->
+    </div>
+  </div>
+</html>
