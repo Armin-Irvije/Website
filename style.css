@@ -15,7 +15,7 @@ body {
   box-sizing: border-box;
 }
 .navBar {
-  width: 100%;
+  width: 110%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -25,8 +25,7 @@ body {
 .navBar-container {
   display: flex;
   align-items: center;
-  justify-content: center;
-  margin-left: 0;
+  justify-content: center;  
   margin-right: 150px;
   gap: 50px; /* Adjust spacing between elements */
 }
