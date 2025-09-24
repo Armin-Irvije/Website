@@ -46,7 +46,7 @@ body {
 }
 
 .profilePic {
-  width: 100px;
+  width: 200px;
   height: 100px;
   border-radius: 50%;
   object-fit: cover;
@@ -173,8 +173,12 @@ body {
 }
 /* Responsive adjustments */
 @media (max-width: 768px) {
+  .profilePic{
+    width: 50px;
+    size: 50px;
+  }
   .heroSec {
-    margin-top: 100px;
+    margin-top: 225px;
     padding: 40px 20px;
     margin-left: 20px;
     margin-right: 20px;
