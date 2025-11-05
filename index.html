@@ -77,16 +77,16 @@
     <section class="tabs-section">
       <div class="tabs-container">
         <div class="tabs-header">
-          <button class="tab-btn active" data-tab="experience">
+          <button class="tab-btn" data-tab="experience">
             Experience
           </button>
           <button class="tab-btn" data-tab="skills">Technical Skills</button>
-          <button class="tab-btn" data-tab="projects">Projects</button>
+          <button class="tab-btn active" data-tab="projects">Projects</button>
         </div>
 
         <div class="tab-content">
           <!-- Experience Tab Content -->
-          <div class="tab-pane active" id="experience">
+          <div class="tab-pane" id="experience">
             <div class="experience-timeline">
               <div class="experience-item">
                 <div class="experience-date">July 2024 – Present</div>
@@ -226,10 +226,11 @@
                   <span class="skill-badge">Java</span>
                   <span class="skill-badge">C++</span>
                   <span class="skill-badge">JavaScript</span>
+                  <span class="skill-badge">TypeScript</span>
                   <span class="skill-badge">HTML</span>
                   <span class="skill-badge">CSS</span>
                   <span class="skill-badge">SQL</span>
-                  <span class="skill-badge">React Native</span>
+                  <span class="skill-badge">React</span>
                 </div>
               </div>
 
@@ -256,8 +257,6 @@
                   <span class="skill-badge">CUDA</span>
                   <span class="skill-badge">Figma</span>
                   <span class="skill-badge">CI/CD</span>
-                  <span class="skill-badge">Azure</span>
-                  <span class="skill-badge">CrewAI</span>
                 </div>
               </div>
 
@@ -269,13 +268,14 @@
                   <span class="skill-badge">Object-Oriented Programming</span>
                   <span class="skill-badge">Data Structures</span>
                   <span class="skill-badge">Algorithms</span>
+                  <span class="skill-badge">Natural Language Processing</span>
                 </div>
               </div>
             </div>
           </div>
 
           <!-- Projects Tab Content -->
-          <div class="tab-pane" id="projects">
+          <div class="tab-pane active" id="projects">
             <div class="projects-grid">
               <div class="project-card">
                 <!-- <img
@@ -297,17 +297,39 @@
                 </video>
                 <h3 class="project-title">Batch Image Editor</h3>
                 <p class="project-description">
-                  A cross-platform desktop application for image processing
-                  tasks.
+                  Cross-platform desktop app that automates image processing tasks.
                 </p>
                 <ul class="project-bullets">
-                  <li>
-                    Features: background removal, batch renaming, background
-                    color customization
-                  </li>
-                  <li>Integrated Python-based image processing algorithms</li>
-                  <li>Tools: Electron, Python, HTML, CSS, JavaScript</li>
+                  <li>Reduced editing time by 85% with automated batch processing</li>
+                  <li>Supports 10+ formats across Windows, macOS, and Linux</li>
                 </ul>
+                <div class="project-tools">Electron • Python • JavaScript</div>
+                <div class="project-links"></div>
+              </div>
+              <div class="project-card">
+                <img
+                  src="images\attendance_tracker.png"
+                  alt="Unified ESL Attendance Tracker"
+                  class="project-img"
+                />
+                <h3 class="project-title">Attendance Tracker</h3>
+                <p class="project-description">
+                  Web portal for ESL service providers to track client attendance and analytics.
+                </p>
+                <ul class="project-bullets">
+                  <li>Built full-stack app with authentication and client management</li>
+                  <li>Dashboard tracks attendance percentages and monthly hours</li>
+                </ul>
+                <div class="project-tools">TypeScript • Tailwind CSS • PostgreSQL</div>
+                <!-- <div class="project-links">
+                  <a
+                    href="https://www.unifiedesl.com/"
+                    class="project-btn"
+                    target="_blank"
+                    >Live Demo</a
+                  > -->
+                  <!-- <a href="#" class="project-btn" target="_blank">GitHub</a> -->
+                <div class="project-links"></div>
               </div>
 
               <div class="project-card">
@@ -322,20 +344,13 @@
                 </video>
                 <h3 class="project-title">Habit Tracker App</h3>
                 <p class="project-description">
-                  A React Native mobile app for tracking both positive habits
-                  and breaking negative habits.
+                  Mobile app for building positive habits and breaking negative ones.
                 </p>
                 <ul class="project-bullets">
-                  <li>
-                    Implemented dual tracking systems with unique progress
-                    metrics
-                  </li>
-                  <li>Consistency counters for positive habits</li>
-                  <li>
-                    Time-since-relapse tracking with milestone achievements
-                  </li>
-                  <li>Tools: React Native, Expo, JavaScript</li>
+                  <li>Dual tracking system with progress metrics and milestones</li>
+                  <li>Consistency counters and time-since-relapse tracking</li>
                 </ul>
+                <div class="project-tools">React Native • Expo • JavaScript</div>
                 <div class="project-links">
                   <a
                     href="https://github.com/Armin-Irvije/Habit-Tracker"
@@ -346,35 +361,7 @@
                   <!-- <a href="#" class="project-btn" target="_blank">Demo</a> -->
                 </div>
               </div>
-              <div class="project-card">
-                <img
-                  src="images\attendance_tracker.png"
-                  alt="Unified ESL Attendance Tracker"
-                  class="project-img"
-                />
-                <h3 class="project-title">Attendance Tracker - Unified ESL</h3>
-                <p class="project-description">
-                  A modern web portal for tracking client attendance with an intuitive user interface, designed specifically for Unified ESL service providers.
-                </p>
-                <ul class="project-bullets">
-                  <li>
-                    Built a professional web application with user authentication and client management
-                  </li>
-                  <li>
-                    Created monthly statistics dashboard with attendance percentages and total hours tracking
-                  </li>
-                  <li>Tools: React, TypeScript, Vite, Tailwind CSS</li>
-                </ul>
-                <!-- <div class="project-links">
-                  <a
-                    href="https://www.unifiedesl.com/"
-                    class="project-btn"
-                    target="_blank"
-                    >Live Demo</a
-                  > -->
-                  <!-- <a href="#" class="project-btn" target="_blank">GitHub</a> -->
-                
-              </div>
+              
 
               <div class="project-card">
                 <img
@@ -384,19 +371,13 @@
                 />
                 <h3 class="project-title">MindtheAge</h3>
                 <p class="project-description">
-                  A mental health recommendation app that provides tailored
-                  resources based on user profiles.
+                  Mental health app that provides personalized resources using ML classification.
                 </p>
                 <ul class="project-bullets">
-                  <li>
-                    Implemented a logistical regression model to classify mental
-                    health text inputs
-                  </li>
-                  <li>
-                    Designed a user interface with login and navigation features
-                  </li>
-                  <li>Tools: Python, Scikit-learn, Streamlit</li>
+                  <li>Built logistic regression model to classify mental health text inputs</li>
+                  <li>Designed UI with authentication and personalized recommendations</li>
                 </ul>
+                <div class="project-tools">Python • Scikit-learn • Streamlit</div>
                 <div class="project-links">
                   <a
                     href="https://github.com/BigDataForSanDiego/repo2024/tree/main/Team-133-main"
@@ -421,19 +402,13 @@
                 />
                 <h3 class="project-title">NBA Points Predictor</h3>
                 <p class="project-description">
-                  A web application that predicts NBA players' future points per
-                  game using regression modeling.
+                  Web app predicting player points per game using regression models.
                 </p>
                 <ul class="project-bullets">
-                  <li>
-                    Leveraged statistical analysis of historical performance
-                    data
-                  </li>
-                  <li>
-                    Informs training, team strategies, and player evaluations
-                  </li>
-                  <li>Tools: Python, Flask, HTML, Pandas, Scikit-learn</li>
+                  <li>Analyzed historical performance data with regression modeling</li>
+                  <li>Provides insights for training and player evaluation</li>
                 </ul>
+                <div class="project-tools">Python • Flask • Scikit-learn</div>
                 <div class="project-links">
                   <a
                     href="https://devpost.com/software/playerprops"
@@ -450,25 +425,18 @@
                   alt="Drug-LLM"
                   class="project-img"
                 /> -->
+                <div class="project-img-placeholder"></div>
                 <h3 class="project-title">
                   Drug-LLM: Medication Information Model
                 </h3>
                 <p class="project-description">
-                  A specialized language model fine-tuned on prescription
-                  medication data to provide accurate responses to
-                  medication-related queries.
+                  Fine-tuned LLM for accurate medication information retrieval.
                 </p>
                 <ul class="project-bullets">
-                  <li>
-                    Implemented Parameter-Efficient Fine-Tuning (PEFT) using
-                    Low-Rank Adaptation, reducing trainable parameters by 93%
-                  </li>
-                  <li>
-                    Achieved 87% accuracy in medication information retrieval
-                    compared to 62% with generic models
-                  </li>
-                  <li>Tools: PyTorch, Transformers, PEFT, GPT-2, Python</li>
+                  <li>Reduced trainable parameters by 93% using PEFT/LoRA</li>
+                  <li>Achieved 87% accuracy vs 62% with generic models</li>
                 </ul>
+                <div class="project-tools">PyTorch • Transformers • GPT-2</div>
                 <div class="project-links">
                   <a
                     href="https://github.com/Armin-Irvije/fine_tuning"
