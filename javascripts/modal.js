@@ -3,20 +3,29 @@
 function openModal(src, type) {
     const modal = document.getElementById('videoModal');
     const modalVideo = document.getElementById('modalVideo');
+    const modalVideoSource = modalVideo.querySelector('source');
     const modalImage = document.getElementById('modalImage');
   
-    // Set the appropriate source based on type
     if (type === 'video') {
-      modalVideo.querySelector('source').src = src;
+      modalVideo.pause();
+      modalVideo.src = src;
+      if (modalVideoSource) {
+        modalVideoSource.src = src;
+      }
       modalVideo.style.display = 'block';
       modalImage.style.display = 'none';
-      modalVideo.load(); // Reload the video with the new source
-      modalVideo.play(); // Autoplay when opened
+      modalVideo.load();
+      modalVideo.play().catch(function () {});
     } else {
       modalImage.src = src;
       modalImage.style.display = 'block';
       modalVideo.style.display = 'none';
-      modalVideo.pause(); // Ensure video is paused if switching from video to image
+      modalVideo.pause();
+      modalVideo.removeAttribute('src');
+      if (modalVideoSource) {
+        modalVideoSource.removeAttribute('src');
+      }
+      modalVideo.load();
     }
   
     // Show the modal
@@ -35,8 +44,14 @@ function openModal(src, type) {
     if (closeModal) {
       closeModal.addEventListener('click', function () {
         modal.style.display = 'none';
-        modalVideo.pause(); // Pause video when closing
-        document.body.style.overflow = 'auto'; // Re-enable scrolling
+        modalVideo.pause();
+        modalVideo.removeAttribute('src');
+        const source = modalVideo.querySelector('source');
+        if (source) {
+          source.removeAttribute('src');
+        }
+        modalVideo.load();
+        document.body.style.overflow = 'auto';
       });
     }
   
@@ -44,8 +59,14 @@ function openModal(src, type) {
     window.addEventListener('click', function (event) {
       if (event.target === modal) {
         modal.style.display = 'none';
-        modalVideo.pause(); // Pause video when closing
-        document.body.style.overflow = 'auto'; // Re-enable scrolling
+        modalVideo.pause();
+        modalVideo.removeAttribute('src');
+        const source = modalVideo.querySelector('source');
+        if (source) {
+          source.removeAttribute('src');
+        }
+        modalVideo.load();
+        document.body.style.overflow = 'auto';
       }
     });
   
@@ -53,8 +74,14 @@ function openModal(src, type) {
     window.addEventListener('keydown', function (event) {
       if (event.key === 'Escape' && modal.style.display === 'block') {
         modal.style.display = 'none';
-        modalVideo.pause(); // Pause video when closing
-        document.body.style.overflow = 'auto'; // Re-enable scrolling
+        modalVideo.pause();
+        modalVideo.removeAttribute('src');
+        const source = modalVideo.querySelector('source');
+        if (source) {
+          source.removeAttribute('src');
+        }
+        modalVideo.load();
+        document.body.style.overflow = 'auto';
       }
     });
   });

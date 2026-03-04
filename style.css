@@ -482,6 +482,14 @@ body {
   color: #3b82f6;
 }
 
+.experience-company a,
+.experience-company a:visited,
+.experience-company a:hover,
+.experience-company a:active {
+  color: inherit;
+  text-decoration: none;
+}
+
 .experience-description {
   line-height: 1.7;
   color: #475569;
