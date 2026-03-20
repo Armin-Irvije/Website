@@ -17,7 +17,7 @@
   <body>
     <section class="navBar">
       <div class="navBar-container">
-        <img src="images/arminLogo2.png" class="logo" alt="Armin Irvije" />
+        <img src="images/armin_logo_dark_theme.png  " class="logo" alt="Armin Irvije" />
         <img src="images/Armin.jpeg" alt="Profile Picture" class="profilePic" />
         <!-- Update this section in your navBar -->
         <div class="social-icons">
@@ -83,17 +83,51 @@
     <!-- Tabs section -->
     <section class="tabs-section">
       <div class="tabs-container">
-        <div class="tabs-header">
-          <button class="tab-btn" data-tab="experience">
+        <div class="tabs-header" role="tablist" aria-label="Portfolio sections">
+          <button
+            id="tab-experience"
+            class="tab-btn"
+            role="tab"
+            aria-selected="false"
+            aria-controls="experience"
+            tabindex="-1"
+            data-tab="experience"
+          >
             Experience
           </button>
-          <button class="tab-btn" data-tab="skills">Technical Skills</button>
-          <button class="tab-btn active" data-tab="projects">Projects</button>
+          <button
+            id="tab-skills"
+            class="tab-btn"
+            role="tab"
+            aria-selected="false"
+            aria-controls="skills"
+            tabindex="-1"
+            data-tab="skills"
+          >
+            Technical Skills
+          </button>
+          <button
+            id="tab-projects"
+            class="tab-btn active"
+            role="tab"
+            aria-selected="true"
+            aria-controls="projects"
+            tabindex="0"
+            data-tab="projects"
+          >
+            Projects
+          </button>
         </div>
 
         <div class="tab-content">
           <!-- Experience Tab Content -->
-          <div class="tab-pane" id="experience">
+          <div
+            class="tab-pane"
+            id="experience"
+            role="tabpanel"
+            aria-labelledby="tab-experience"
+            hidden
+          >
             <div class="experience-timeline">
               <div class="experience-item">
                 <div class="experience-date">November 2025 – April 2026</div>
@@ -246,7 +280,13 @@
           </div>
 
           <!-- Technical Skills Tab Content -->
-          <div class="tab-pane" id="skills">
+          <div
+            class="tab-pane"
+            id="skills"
+            role="tabpanel"
+            aria-labelledby="tab-skills"
+            hidden
+          >
             <div class="skills-container">
               <div class="skills-category">
                 <h3>Programming Languages</h3>
@@ -304,7 +344,12 @@
           </div>
 
           <!-- Projects Tab Content -->
-          <div class="tab-pane active" id="projects">
+          <div
+            class="tab-pane active"
+            id="projects"
+            role="tabpanel"
+            aria-labelledby="tab-projects"
+          >
             <div class="projects-grid">
               <div class="project-card">
                 <div class="project-card-media">
@@ -610,8 +655,15 @@
       </div>
     </section>
 
-    <div id="videoModal" class="modal">
-      <span class="close-modal">&times;</span>
+    <div
+      id="videoModal"
+      class="modal"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Project media"
+      aria-hidden="true"
+    >
+      <span class="close-modal" tabindex="0" role="button" aria-label="Close modal">&times;</span>
       <div class="modal-content">
         <video id="modalVideo" controls>
           <source src="" type="video/mp4" />
