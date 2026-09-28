@@ -3,6 +3,7 @@
  also html is NOT case sensitive -->
 <html>
   <head>
+    <meta charset="utf-8" />
     <link rel="icon" href="favicon\favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" type="text/css" href="style.css" />
     <link rel="stylesheet" href="mediaQueries.css" />
@@ -129,6 +130,37 @@
             hidden
           >
             <div class="experience-timeline">
+              <div class="experience-item">
+                <div class="experience-date">February 2026 – August 2026</div>
+                <div class="experience-role">AI Engineering Intern</div>
+                <div class="experience-company">
+                  Juris Legal, Copenhagen, Denmark
+                </div>
+                <div class="experience-description">
+                  <ul>
+                    <li>
+                      Architected an evaluation framework for a production legal
+                      RAG system, replacing manual answer validation with
+                      automated scoring and saving 5+ hours of review time
+                    </li>
+                    <li>
+                      Integrated LLM-as-a-judge pipelines with LangWatch and
+                      Azure OpenAI to score legal responses against retrieved
+                      context and reference answers
+                    </li>
+                    <li>
+                      Built a golden dataset of legal Q&amp;A pairs that captures
+                      the complexity of the legal domain and gives the RAG
+                      system a repeatable benchmark
+                    </li>
+                    <li>
+                      Tools used: FastAPI, LangChain, Azure OpenAI, FAISS,
+                      LangWatch
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
               <div class="experience-item">
                 <div class="experience-date">November 2025 – April 2026</div>
                 <div class="experience-role">
@@ -351,6 +383,78 @@
             aria-labelledby="tab-projects"
           >
             <div class="projects-grid">
+              <div class="project-card">
+                <div class="project-card-media">
+                  <img
+                    src="images/clauseguard.png"
+                    alt="ClauseGuard demo showing a contract clause and risk analysis"
+                    class="project-img"
+                  />
+                </div>
+                <div class="project-card-body">
+                  <h3 class="project-title">ClauseGuard</h3>
+                  <p class="project-description">
+                    Scores a contract clause for risk, explains it in plain
+                    language, and suggests a redline.
+                  </p>
+                  <ul class="project-bullets">
+                    <li>
+                      Returns risk level, explanation, and a suggested rewrite
+                      with token, latency, and cost metadata
+                    </li>
+                    <li>
+                      Compares prompt versions with an LLM-as-judge harness and
+                      refuses requests for binding legal advice
+                    </li>
+                  </ul>
+                  <div class="project-tools">Next.js • Python • OpenRouter</div>
+                  <div class="project-links">
+                    <a
+                      href="https://legal-contract-risk.vercel.app/"
+                      class="project-btn"
+                      target="_blank"
+                      >Live Demo</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="project-card">
+                <div class="project-card-media">
+                  <img
+                    src="images/afterhours.png"
+                    alt="Copenhagen Cuts demo site with the AfterHours chat widget"
+                    class="project-img"
+                  />
+                </div>
+                <div class="project-card-body">
+                  <h3 class="project-title">AfterHours</h3>
+                  <p class="project-description">
+                    Embeddable chat widget for salons and barbers that answers
+                    shop FAQs and collects booking details after hours.
+                  </p>
+                  <ul class="project-bullets">
+                    <li>
+                      Built a document-grounded booking agent with LangGraph,
+                      FastAPI, and pgvector
+                    </li>
+                    <li>
+                      Sends owners a structured inquiry summary and deploys on
+                      Azure Container Apps
+                    </li>
+                  </ul>
+                  <div class="project-tools">
+                    FastAPI • LangGraph • PostgreSQL • Azure
+                  </div>
+                  <div class="project-links">
+                    <a
+                      href="https://github.com/Armin-Irvije/AfterHours"
+                      class="project-btn"
+                      target="_blank"
+                      >GitHub</a
+                    >
+                  </div>
+                </div>
+              </div>
               <div class="project-card">
                 <div class="project-card-media">
                   <!-- <img
